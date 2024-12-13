@@ -1,7 +1,7 @@
 package testproject;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.*;
 
 public class AggregatorTest {
 
@@ -26,5 +26,12 @@ public class AggregatorTest {
         agr.addValue(val);
         agr.addValue(val);
         assertThat(agr.getSum()).isEqualTo(val * 2);
+    }
+
+    @Test
+    public void TestCheckMethodReset() {
+        Aggregator Agrega = new Aggregator();
+        Agrega.reset();
+        assertThat(Agrega.getSum()).isEqualTo(0);
     }
 }
